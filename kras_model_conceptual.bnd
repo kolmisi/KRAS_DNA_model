@@ -1,0 +1,42 @@
+Node KRAS {
+  logic = (KRAS);
+  rate_up = @logic ? $u_KRAS : 0;
+  rate_down = @logic ? 0 : $d_KRAS;
+}
+
+Node cell_cycle {
+  logic = (!CHEK1 & !MAPKAPK2);
+  rate_up = @logic ? $u_cell_cycle : 0;
+  rate_down = @logic ? 0 : $d_cell_cycle;
+}
+
+Node CHEK1 {
+  logic = (DNA_damage & !CHEK1i);
+  rate_up = @logic ? $u_CHEK1 : 0;
+  rate_down = @logic ? 0 : $d_CHEK1;
+}
+
+Node DNA_damage {
+  logic = (!CHEK1 & DNA_damage & !MAPKAPK2);
+  rate_up = @logic ? $u_DNA_damage : 0;
+  rate_down = @logic ? 0 : $d_DNA_damage;
+}
+
+Node MAPKAPK2 {
+  logic = (KRAS & DNA_damage & !MAPKAPK2i);
+  rate_up = @logic ? $u_MAPKAPK2 : 0;
+  rate_down = @logic ? 0 : $d_MAPKAPK2;
+}
+
+Node CHEK1i {
+  logic = (CHEK1i);
+  rate_up = @logic ? $u_CHEK1i : 0;
+  rate_down = @logic ? 0 : $d_CHEK1i;
+}
+
+Node MAPKAPK2i {
+  logic = (MAPKAPK2i);
+  rate_up = @logic ? $u_MAPKAPK2i : 0;
+  rate_down = @logic ? 0 : $d_MAPKAPK2i;
+}
+
