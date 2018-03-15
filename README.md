@@ -10,7 +10,7 @@ The network optimization tool is the R package CellNOptR. The logical models obt
 The files  
 "kras_model_conceptual.cfg"  
 "kras_model_conceptual.bnd"  
-are model files of a protein interaction network for the stochastic Boolean simulator platform MaBoSS (download from http://maboss.curie.fr).
+are model files of a protein interaction network for the stochastic Boolean simulator platform [MaBoSS](http://maboss.curie.fr).
 
 The R script  
 "maboss_wrapper_plotting.R"  
